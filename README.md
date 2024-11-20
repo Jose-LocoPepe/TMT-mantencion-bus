@@ -2,20 +2,21 @@
 <br />
 <div align="center">
   <h3 align="center">Transportes Mardones Torres.</h3>
-  <h3 align="center">Sistema de mantenimiento</h3>
+  <h3 align="center">Sistema de mantenimiento de buses</h3>
 </div>
 
-## Table of Contents
+## Tabla de contenidos
 - [Introducción](#introducción)
-- [Tecnologías Utilizadas](#tecnologías-utilizadas)
-- [Pasos de Ejecución](#pasos_de_ejecución)
-- [Iniciar la Aplicación](#iniciar_la_aplicación)
-- [Versionado](#versionado)
-- [Autores](#autores)
-- [Licencia](#licencia)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas-🖥️)
+- [Pasos de Ejecución](#pasos-de-ejecución)
+- [Iniciar la Aplicación](#iniciar-la-aplicación)
+- [Versionado](#versionado-📌)
+- [Autores](#autores-✒️)
+- [Licencia](#licencia-📄)
 
 
-# Full-Stack - Aplicacion de consola para gestión de buses y personal "Transporte Mardones Torres"
+
+# Full-Stack - Aplicacion de consola para gestión de buses "Transporte Mardones Torres"
 
 ## Introducción
 
@@ -47,6 +48,18 @@ Ejecuta el siguiente comando en un terminal para poder instalar las dependencias
 ```bash
 dotnet restore
 ```
+## Tipo de archivo y uso
+
+Si está interesado en agregar buses desde un archivo, debe hacerlo del siguiente formato:
+
+```bash
+ABCD23,B001,true
+DEFG56,B002,false
+GHIJ89,B003,true
+```
+El cual el primer campo es la patente del bus, el siguiente es el codigo del busy y el ultimo campo identifica si este es verdadero o falso (true/false) si es que se encuentra disponible el bus o no.
+
+El formato debe ser guardado en .txt en la carpeta raíz del programa compilado.
 
 ### Iniciar la Aplicación
 

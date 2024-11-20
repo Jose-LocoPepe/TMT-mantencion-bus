@@ -1,0 +1,3 @@
+ABC123,B001,true
+DEF456,B002,false
+GHI789,B003,true

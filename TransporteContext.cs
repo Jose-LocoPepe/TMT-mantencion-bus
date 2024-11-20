@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using DotNetEnv;
+
 
 namespace TMT_mantencion;
 
@@ -22,8 +24,18 @@ public partial class TransporteContext : DbContext
     public virtual DbSet<Kilometraje> Kilometrajes { get; set; }
 
     public virtual DbSet<Viaje> Viajes { get; set; }
-
+/*
       protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        // Load environment variables from .env file
+        DotNetEnv.Env.Load();
+        var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
+        optionsBuilder.UseMySQL(connectionString);
+        Console.WriteLine(Env.GetString("DB_CONNECTION_STRING"));
+
+    }*/
+
+   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         // Load environment variables from .env file
         DotNetEnv.Env.Load();
