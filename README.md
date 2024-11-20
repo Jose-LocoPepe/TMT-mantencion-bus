@@ -71,17 +71,17 @@ dotnet run
 Con ello la aplicación web se iniciará, y puedes acceder a ella mediante tu navegador web. (Por ejemplo: http://localhost)
 
 
-## Versionado 📌
+## 📌 Versionado
 
 Usamos [GitHub](https://github.com/Jose-LocoPepe/TMT-mantencion) para el versionado.
 
-## Autores ✒️
+## ✒️ Autores 
 
 ###### José Bautista
 
 ###### Nicolás Mardones
 
 
-## Licencia 📄
+## 📄 Licencia 
 
 Este proyecto está bajo la Licencia de &copy; Nicolás Mardones, José Bautista
