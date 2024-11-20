@@ -7,12 +7,12 @@
 
 ## Tabla de contenidos
 - [Introducción](#introducción)
-- [Tecnologías Utilizadas](#tecnologías-utilizadas-🖥️)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas🖥️)
 - [Pasos de Ejecución](#pasos-de-ejecución)
 - [Iniciar la Aplicación](#iniciar-la-aplicación)
-- [Versionado](#versionado-📌)
-- [Autores](#autores-✒️)
-- [Licencia](#licencia-📄)
+- [Versionado](#versionado📌)
+- [Autores](#autores✒️)
+- [Licencia](#licencia📄)
 
 
 
@@ -57,7 +57,7 @@ ABCD23,B001,true
 DEFG56,B002,false
 GHIJ89,B003,true
 ```
-El cual el primer campo es la patente del bus, el siguiente es el codigo del busy y el ultimo campo identifica si este es verdadero o falso (true/false) si es que se encuentra disponible el bus o no.
+El cual el primer campo es la patente del bus, el siguiente es el codigo del bus y el ultimo campo identifica si este es verdadero o falso (true/false) si es que se encuentra disponible el bus o no.
 
 El formato debe ser guardado en .txt en la carpeta raíz del programa compilado.
 
