@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TMT_mantencion;
+namespace TMT_mantencion.Models;
 
 public partial class Bus
 {
@@ -13,7 +13,7 @@ public partial class Bus
 
     public bool Disponibilidad { get; set; }
 
-    public virtual ICollection<Chofer> Chofers { get; } = new List<Chofer>();
+    public int Kilometros { get; set; }
 
     public virtual ICollection<Viaje> Viajes { get; } = new List<Viaje>();
 }
