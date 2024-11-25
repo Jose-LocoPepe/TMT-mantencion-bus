@@ -11,6 +11,7 @@ public class MantenimientoBuses
     public MantenimientoBuses()
     {
         context = new TransporteContext();
+        listaBuses = new List<Bus>();
     }
 
     // Agregar Buses desde un archivo
@@ -32,13 +33,14 @@ public class MantenimientoBuses
         context.SaveChanges();
     }
 
-    // Listar Buses
+//Listar buses
     public void ListarBuses()
     {
         listaBuses = context.Buses.ToList();
         foreach (var bus in listaBuses)
         {
-            Console.WriteLine($"Patente: {bus.Patente}, Codigo: {bus.Codigo}, Disponibilidad: {bus.Disponibilidad}, Kilometros: {bus.Kilometros}");
+            string disponibilidad = bus.Disponibilidad ? "Disponible" : "No disponible";
+            Console.WriteLine($"Patente: {bus.Patente}, Código: {bus.Codigo}, Disponibilidad: {disponibilidad}");
         }
         Console.Write("Presione cualquier tecla para continuar");
         Console.ReadLine();
@@ -51,7 +53,7 @@ public class MantenimientoBuses
             if(bus.Disponibilidad == true){
                 Console.Write(("Actualmente el bus está disponible, ¿desea cambiar la disponibilidad? (S/N): "));
                 var respuesta = Console.ReadLine();
-                if(respuesta == "S" || respuesta == "s"){
+                if(respuesta != null && respuesta == "S" || respuesta == "s"){
                     bus.Disponibilidad = false;
                     Console.WriteLine("El bus ahora no está disponible");
                     Console.Write("Presione cualquier tecla para continuar");
@@ -60,7 +62,7 @@ public class MantenimientoBuses
             }else{
                 Console.Write(("Actualmente el bus no está disponible, ¿desea cambiar la disponibilidad? (S/N): "));
                 var respuesta = Console.ReadLine();
-                if(respuesta == "S" || respuesta == "s"){
+                if(respuesta != null && respuesta == "S" || respuesta == "s"){
                     {
                         bus.Disponibilidad = true;
                         Console.WriteLine("El bus ahora está disponible");
@@ -84,12 +86,18 @@ public class MantenimientoBuses
         if (bus != null){
             Console.Write("Está seguro que desea eliminar el bus " +bus.Patente+ "? (s/n): ");
             var respuesta = Console.ReadLine();
-            if(respuesta.ToLower() == "s"){
-                context.Buses.Remove(bus);
-                context.SaveChanges();
-                Console.WriteLine("Bus eliminado");
-                Console.WriteLine("Presione cualquier tecla para continuar");
-                Console.ReadLine();
+            if(respuesta != null && respuesta.ToLower() == "s"){
+                try{
+                    context.Buses.Remove(bus);
+                    context.SaveChanges();
+                    Console.WriteLine("Bus eliminado correctamente");
+                    Console.WriteLine("Presione cualquier tecla para continuar");
+                    Console.ReadLine();
+                } catch{
+                    Console.WriteLine("Error al eliminar el bus, verifique que no tenga viajes asociados.");
+                    Console.WriteLine("Presione cualquier tecla para continuar");
+                    Console.ReadLine();
+                }
             }
         }else{
             Console.WriteLine("Bus no encontrado");

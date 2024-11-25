@@ -9,10 +9,11 @@
 - [Introducción](#introducción)
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
 - [Pasos de Ejecución](#pasos-de-ejecución)
+- [Migraciones](#migraciones)
 - [Iniciar la Aplicación](#iniciar-la-aplicación)
-- [Versionado](#versionado)
-- [Autores](#autores)
-- [Licencia](#licencia)
+- [Versionado 📌](#versionado)
+- [Autores ✒️](#autores)
+- [Licencia 📄](#licencia)
 
 
 
@@ -28,6 +29,11 @@ Está diseñado para darle mantencion a los busesy choferes de la base de datos.
 - [MySQL](https://www.mysql.com)
 - [MySQL Workbench](https://dev.mysql.com/downloads/installer/)
 
+Asegúrate de tener instalada la herramienta de Entity Framework Core CLI:
+```bash
+dotnet tool install --global dotnet-ef
+```
+
 ### Pasos de Ejecución
 
 Abrir el proyecto en el Visual Studio Code o su editor favorito. Abre una nueva terminal.
@@ -36,18 +42,29 @@ Debemos copiar el archivo .env para poder establecer la conexión con nuestra ba
 copy .env.example .env
 ```
 
-Cambiamos los siguientes parámetros en el .env con las variables de entorno de la base de datos:
-```bash
-server = Es la dirección del servidor MySQL. Puede utilizar localhost si tiene el servidor MySQL en la misma máquina que la aplicación web.
-database = Aquí va el nombre de la base de datos creada en nuestro administrador de base de datos preferido (Ej: MySQL Workbench).
-user = El nombre de usuario que utiliza para acceder a la base de datos.
-password = Es la contraseña del usuario.
-```
+### Configuración de la Base de Datos
+
+Cambia los siguientes parámetros en el archivo `.env` con las variables de entorno de la base de datos:
+
+- **server**: Es la dirección del servidor MySQL. Puede utilizar `localhost` si tiene el servidor MySQL en la misma máquina que la aplicación web.
+- **port**: Es el puerto donde se realiza la conexión a la base de datos.
+- **database**: Aquí va el nombre de la base de datos creada en nuestro administrador de base de datos preferido (Ej: MySQL Workbench).
+- **user**: El nombre de usuario que utiliza para acceder a la base de datos.
+- **password**: Es la contraseña del usuario.
+
+
 
 Ejecuta el siguiente comando en un terminal para poder instalar las dependencias en el proyecto.
 ```bash
 dotnet restore
 ```
+
+## Migraciones
+Ejecuta el siguiente comando para aplicar las migraciones y crear el esquema de la base de datos:
+```bash
+dotnet ef database update
+```
+
 ## Tipo de archivo y uso
 
 Si está interesado en agregar buses desde un archivo, debe hacerlo del siguiente formato:
@@ -71,7 +88,7 @@ dotnet run
 Con ello la aplicación web se iniciará, y puedes acceder a ella mediante tu navegador web. (Por ejemplo: http://localhost)
 
 
-## 📌 Versionado
+## Versionado 📌 
 
 Usamos [GitHub](https://github.com/Jose-LocoPepe/TMT-mantencion) para el versionado.
 
@@ -82,6 +99,6 @@ Usamos [GitHub](https://github.com/Jose-LocoPepe/TMT-mantencion) para el version
 ###### Nicolás Mardones
 
 
-## 📄 Licencia 
+## Licencia 📄 
 
 Este proyecto está bajo la Licencia de &copy; Nicolás Mardones, José Bautista
