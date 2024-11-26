@@ -70,11 +70,12 @@ dotnet ef database update
 Si está interesado en agregar buses desde un archivo, debe hacerlo del siguiente formato:
 
 ```bash
-ABCD23,B001,true
-DEFG56,B002,false
-GHIJ89,B003,true
+PATENTE | NBUS | DISPONIBILIDAD | KILOMETRAJE
+ABDA13,B001,true,200000
+DDD456,B002,false,6400000
+GDS789,B003,true,456400
+
 ```
-El cual el primer campo es la patente del bus, el siguiente es el codigo del busy y el ultimo campo identifica si este es verdadero o falso (true/false) si es que se encuentra disponible el bus o no.
 
 El formato debe ser guardado en .txt en la carpeta raíz del programa compilado.
 
