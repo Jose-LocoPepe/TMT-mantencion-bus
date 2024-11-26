@@ -86,7 +86,8 @@ Ahora levantamos la aplicación en un terminal con el comando:
 dotnet run
 ```
 
-Con ello la aplicación web se iniciará, y puedes acceder a ella mediante tu navegador web. (Por ejemplo: http://localhost)
+
+
 
 
 ## Versionado 📌 
