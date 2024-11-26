@@ -93,8 +93,9 @@ public class MantenimientoBuses
                     Console.WriteLine("Bus eliminado correctamente");
                     Console.WriteLine("Presione cualquier tecla para continuar");
                     Console.ReadLine();
-                } catch{
+                } catch(Exception ex){
                     Console.WriteLine("Error al eliminar el bus, verifique que no tenga viajes asociados.");
+                    Console.WriteLine(ex.Message);
                     Console.WriteLine("Presione cualquier tecla para continuar");
                     Console.ReadLine();
                 }
